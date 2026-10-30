@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -27,13 +26,12 @@ function AdminRoute({ user, authLoading }) {
 export default function App() {
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
-  
+
   async function refreshUser() {
     try {
-      const response = await fetch(
-        "http://localhost:5000/api/7166/auth/me",
-        { credentials: "include" }
-      );
+      const response = await fetch("http://localhost:5000/api/7166/auth/me", {
+        credentials: "include",
+      });
 
       if (!response.ok) {
         setUser(null);
@@ -44,10 +42,8 @@ export default function App() {
 
       // Supports common API response formats.
       const currentUser =
-        data.user ||
-        data.data?.user ||
-        (data._id || data.id ? data : null);
-      
+        data.user || data.data?.user || (data._id || data.id ? data : null);
+
       setUser(currentUser);
     } catch (error) {
       console.error("Unable to check login status:", error);
@@ -60,7 +56,7 @@ export default function App() {
   useEffect(() => {
     refreshUser();
   }, []);
-  
+
   return (
     <BrowserRouter>
       <Navbar
@@ -74,20 +70,14 @@ export default function App() {
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
 
-        <Route
-          path="/login"
-          element={<Login onLoginSuccess={refreshUser} />}
-        />
+        <Route path="/login" element={<Login onLoginSuccess={refreshUser} />} />
 
         <Route
           path="/register"
           element={<Register onRegisterSuccess={refreshUser} />}
         />
 
-        <Route
-          path="/watch/:id"
-          element={<Watch />}
-        />
+        <Route path="/watch/:id" element={<Watch />} />
 
         <Route path="/library" element={<Library />} />
 
@@ -99,6 +89,8 @@ export default function App() {
 
       <footer className="footer">
         ItmPlay · A Movie Streaming Platform All Rights Reserved.
+        <br />
+        This product uses the TMDB API but is not endorsed or certified by TMDB.
       </footer>
     </BrowserRouter>
   );

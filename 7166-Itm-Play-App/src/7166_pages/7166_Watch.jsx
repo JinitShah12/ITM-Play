@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -58,12 +57,12 @@ export default function Watch() {
     );
   }
 
-  if (error) {
+  if (error || !movie) {
     return (
       <main className="watch-shell">
         <div className="watch-error">
           <h1>Movie unavailable</h1>
-          <p>{error}</p>
+          <p>{error || "Movie not found."}</p>
           <Link to="/movies" className="watch-button">
             Browse movies
           </Link>
@@ -71,6 +70,9 @@ export default function Watch() {
       </main>
     );
   }
+
+  // YouTube trailers (from TMDB) must be shown in an iframe, not a <video> tag
+  const isEmbed = /youtube(-nocookie)?\.com\/embed/.test(movie.videoUrl || "");
 
   return (
     <main className="watch-shell">
@@ -100,7 +102,15 @@ export default function Watch() {
       </header>
 
       <section className="watch-player">
-        {movie.videoUrl && !videoError ? (
+        {movie.videoUrl && isEmbed ? (
+          <iframe
+            className="watch-video"
+            src={movie.videoUrl}
+            title={`${movie.title} trailer`}
+            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : movie.videoUrl && !videoError ? (
           <video
             key={movie.videoUrl}
             className="watch-video"

@@ -1456,3 +1456,138 @@ button.secondary-button:disabled {
     gap: 24px 13px;
   }
 }
+/* Append to the end of 7166_index.css */
+
+/* Hero */
+.hero-title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.05; margin: 0 0 16px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.stats-strip { display: flex; gap: 36px; margin-top: 36px; }
+.stats-strip div { display: flex; flex-direction: column; }
+.stats-strip strong { font-size: 1.8rem; font-weight: 800; }
+.stats-strip span { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: #b4b4be; }
+
+/* Horizontal poster rails */
+.rail { display: flex; gap: 16px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.rail-item { flex: 0 0 180px; scroll-snap-align: start; }
+
+/* Movie card with SpotlightCard */
+.movie-card-spot { padding: 0 !important; border: none !important; background: transparent !important; border-radius: 10px; overflow: hidden; }
+.poster-wrap { position: relative; }
+.rating-badge { position: absolute; top: 8px; left: 8px; padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; background: rgba(16, 16, 20, 0.8); backdrop-filter: blur(4px); }
+.poster-play { position: absolute; inset: 0; display: grid; place-items: center; font-size: 2rem; background: rgba(16, 16, 20, 0.45); opacity: 0; transition: opacity 0.2s ease; }
+.movie-card:hover .poster-play { opacity: 1; }
+
+/* Auth pages with Aurora background */
+.auth-bg { position: fixed; inset: 0; z-index: 0; opacity: 0.55; pointer-events: none; }
+.auth-card { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero, .movie-card, .poster-play { transition: none !important; }
+}
+/* Append to the end of 7166_index.css */
+
+/* Hero */
+.hero-title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.05; margin: 0 0 16px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.stats-strip { display: flex; gap: 36px; margin-top: 36px; }
+.stats-strip div { display: flex; flex-direction: column; }
+.stats-strip strong { font-size: 1.8rem; font-weight: 800; }
+.stats-strip span { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: #b4b4be; }
+
+/* Horizontal poster rails */
+.rail { display: flex; gap: 16px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.rail-item { flex: 0 0 180px; scroll-snap-align: start; }
+
+/* Movie card with SpotlightCard */
+.movie-card-spot { padding: 0 !important; border: none !important; background: transparent !important; border-radius: 10px; overflow: hidden; }
+.poster-wrap { position: relative; }
+.rating-badge { position: absolute; top: 8px; left: 8px; padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; background: rgba(16, 16, 20, 0.8); backdrop-filter: blur(4px); }
+.poster-play { position: absolute; inset: 0; display: grid; place-items: center; font-size: 2rem; background: rgba(16, 16, 20, 0.45); opacity: 0; transition: opacity 0.2s ease; }
+.movie-card:hover .poster-play { opacity: 1; }
+
+/* Auth pages with Aurora background */
+.auth-bg { position: fixed; inset: 0; z-index: 0; opacity: 0.55; pointer-events: none; }
+.auth-card { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero, .movie-card, .poster-play { transition: none !important; }
+}
+
+/* Featured carousel */
+.carousel { position: relative; overflow: hidden; margin: 0 5vw 32px; border-radius: 16px; background: #19191f; }
+.carousel-track { display: flex; transition: transform 0.6s ease; }
+.carousel-slide { flex: 0 0 100%; min-height: 420px; display: flex; align-items: center; background-size: cover; background-position: center; }
+.carousel-content { max-width: 560px; padding: 40px clamp(20px, 5vw, 56px); }
+.carousel-content h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 8px 0 12px; font-weight: 800; }
+.carousel-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: #b4b4be; font-size: 14px; margin-bottom: 12px; }
+.carousel-description { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: #d4d4da; line-height: 1.6; margin-bottom: 20px; }
+.carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid #3a3a43; background: rgba(16, 16, 20, 0.7); color: #fff; font-size: 24px; cursor: pointer; }
+.carousel-arrow:hover { background: #c1272d; border-color: #c1272d; }
+.carousel-prev { left: 14px; }
+.carousel-next { right: 14px; }
+.carousel-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.carousel-dots button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: none; background: #5a5a66; cursor: pointer; }
+.carousel-dots button.is-active { width: 26px; border-radius: 5px; background: #c1272d; }
+@media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
+
+/* Trailer iframe on the Watch page */
+iframe.watch-video { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; background: #000; }
+
+/* Append to the end of 7166_index.css */
+
+/* Hero */
+.hero-title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.05; margin: 0 0 16px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.stats-strip { display: flex; gap: 36px; margin-top: 36px; }
+.stats-strip div { display: flex; flex-direction: column; }
+.stats-strip strong { font-size: 1.8rem; font-weight: 800; }
+.stats-strip span { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: #b4b4be; }
+
+/* Horizontal poster rails */
+.rail { display: flex; gap: 16px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x proximity; scrollbar-width: none; }
+.rail-item { flex: 0 0 180px; scroll-snap-align: start; }
+
+/* Movie card with SpotlightCard */
+.movie-card-spot { padding: 0 !important; border: none !important; background: transparent !important; border-radius: 10px; overflow: hidden; }
+.poster-wrap { position: relative; }
+.rating-badge { position: absolute; top: 8px; left: 8px; padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; background: rgba(16, 16, 20, 0.8); backdrop-filter: blur(4px); }
+.poster-play { position: absolute; inset: 0; display: grid; place-items: center; font-size: 2rem; background: rgba(16, 16, 20, 0.45); opacity: 0; transition: opacity 0.2s ease; }
+.movie-card:hover .poster-play { opacity: 1; }
+
+/* Auth pages with Aurora background */
+.auth-bg { position: fixed; inset: 0; z-index: 0; opacity: 0.55; pointer-events: none; }
+.auth-card { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero, .movie-card, .poster-play { transition: none !important; }
+}
+
+/* Featured carousel */
+.carousel { position: relative; overflow: hidden; margin: 0 5vw 32px; border-radius: 16px; background: #19191f; }
+.carousel-track { display: flex; transition: transform 0.6s ease; }
+.carousel-slide { flex: 0 0 100%; min-height: 420px; display: flex; align-items: center; background-size: cover; background-position: center; }
+.carousel-content { max-width: 560px; padding: 40px clamp(20px, 5vw, 56px); }
+.carousel-content h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 8px 0 12px; font-weight: 800; }
+.carousel-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: #b4b4be; font-size: 14px; margin-bottom: 12px; }
+.carousel-description { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: #d4d4da; line-height: 1.6; margin-bottom: 20px; }
+.carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid #3a3a43; background: rgba(16, 16, 20, 0.7); color: #fff; font-size: 24px; cursor: pointer; }
+.carousel-arrow:hover { background: #c1272d; border-color: #c1272d; }
+.carousel-prev { left: 14px; }
+.carousel-next { right: 14px; }
+.carousel-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.carousel-dots button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: none; background: #5a5a66; cursor: pointer; }
+.carousel-dots button.is-active { width: 26px; border-radius: 5px; background: #c1272d; }
+@media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
+
+/* Trailer iframe on the Watch page */
+iframe.watch-video { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; background: #000; }
+
+/* Rail arrows (scrollbar hidden) */
+.rail::-webkit-scrollbar { display: none; }
+.rail-wrap { position: relative; }
+.rail-arrow { position: absolute; top: 38%; transform: translateY(-50%); z-index: 2; width: 42px; height: 42px; border-radius: 50%; border: 1px solid #3a3a43; background: rgba(16, 16, 20, 0.85); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; transition: background 0.2s ease, opacity 0.2s ease; }
+.rail-arrow:hover:not(:disabled) { background: #c1272d; border-color: #c1272d; }
+.rail-arrow:disabled { opacity: 0; pointer-events: none; }
+.rail-prev { left: -10px; }
+.rail-next { right: -10px; }
+@media (max-width: 640px) { .rail-arrow { display: none; } }
